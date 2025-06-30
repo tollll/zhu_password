@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Захищений вхід</title>
+</head>
+<body>
+  <h2>Введіть пароль:</h2>
+  <input type="password" id="password">
+  <button onclick="checkPassword()">Увійти</button>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "пединівка") {
+        window.location.href = "https://www.darlingzhu.com/secret_page";
+      } else {
+        alert("Неправильний пароль. Спробуйте ще раз.");
+      }
+    }
+  </script>
+</body>
+</html>
