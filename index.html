@@ -3,15 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Захищений вхід</title>
+  <style>
+    #toggle {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <h2>Введіть пароль:</h2>
-  <input type="password" id="password">
+  <input type="text" id="password" placeholder="Введіть пароль">
+  <span id="toggle">👁️</span>
+  <br><br>
   <button onclick="checkPassword()">Увійти</button>
 
   <script>
+    let isMasked = false;
+
+    document.getElementById("toggle").onclick = function () {
+      const input = document.getElementById("password");
+      if (isMasked) {
+        input.type = "text";
+        this.textContent = "👁️";
+      } else {
+        input.type = "password";
+        this.textContent = "🙈";
+      }
+      isMasked = !isMasked;
+    };
+
     function checkPassword() {
-      const password = document.getElementById("password").value;
+      const password = document.getElementById("password").value.trim();
       if (password === "пединівка") {
         window.location.href = "https://www.darlingzhu.com/secret_page";
       } else {
