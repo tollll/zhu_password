@@ -5,14 +5,14 @@
   <title>Захищений вхід</title>
   <style>
     #toggle {
-      margin-left: 10px;
+      margin-left: 20px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h2>Введіть пароль:</h2>
-  <input type="text" id="password" placeholder="Введіть пароль">
+  <input type="text" id="password" placeholder="напиши нижче секретне слово">
   <span id="toggle">👁️</span>
   <br><br>
   <button onclick="checkPassword()">Увійти</button>
@@ -37,7 +37,7 @@
       if (password === "пединівка") {
         window.location.href = "https://www.darlingzhu.com/secret_page";
       } else {
-        alert("Неправильний пароль. Спробуйте ще раз.");
+        alert("Неправильне слово. Спробуйте ще раз.");
       }
     }
   </script>
