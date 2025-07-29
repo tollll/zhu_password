@@ -4,6 +4,38 @@
   <meta charset="UTF-8">
   <title>Захищений вхід</title>
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      font-size: 2em; /* Удвоє більший розмір тексту */
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      font-size: 1em;
+      padding: 10px;
+      width: 80%;
+    }
+
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
     #toggle {
       margin-left: 20px;
       cursor: pointer;
@@ -11,11 +43,13 @@
   </style>
 </head>
 <body>
-  <h2>напиши секретне слово :</h2>
-  <input type="text" id="password" placeholder="тут">
-  <span id="toggle">👁️</span>
-  <br><br>
-  <button onclick="checkPassword()">готово</button>
+  <div class="container">
+    <h2>напиши секретне слово :</h2>
+    <input type="text" id="password" placeholder="тут">
+    <span id="toggle">👁️</span>
+    <br><br>
+    <button onclick="checkPassword()">готово</button>
+  </div>
 
   <script>
     let isMasked = false;
@@ -43,3 +77,4 @@
   </script>
 </body>
 </html>
+
