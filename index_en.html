@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Access</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      font-size: 2em;
+      margin: 0;
+      font-family: sans-serif;
+      background-image: url("fon.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    input {
+      font-size: 1em;
+      padding: 10px;
+      width: 80%;
+    }
+
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    #toggle {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter the secret word:</h2>
+    <input type="text" id="password" placeholder="type here">
+    <span id="toggle">👁️</span>
+    <br><br>
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+
+  <script>
+    let isMasked = false;
+
+    document.getElementById("toggle").onclick = function () {
+      const input = document.getElementById("password");
+      if (isMasked) {
+        input.type = "text";
+        this.textContent = "👁️";
+      } else {
+        input.type = "password";
+        this.textContent = "🙈";
+      }
+      isMasked = !isMasked;
+    };
+
+    function checkPassword() {
+      const password = document.getElementById("password").value.trim().toLowerCase();
+      if (password === "pedynivka") {
+        window.location.href = "https://www.darlingzhu.com/secret_page_en";
+      } else {
+        alert("Incorrect word. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
